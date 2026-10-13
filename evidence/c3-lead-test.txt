@@ -1,0 +1,48 @@
+FIRST REPLY: Hi Alex! I'd love to help get you connected for Python tutoring. Could you please share your email address so our team can reach out to you?
+FIRST TRACE: [
+  {
+    "event": "route",
+    "intent": "lead"
+  },
+  {
+    "event": "model",
+    "turn": 1,
+    "tool_names": []
+  }
+]
+[TOOL] record_customer_interest: lead saved
+SECOND REPLY: Thanks, Alex! I've recorded your details and interest in Python Starter tutoring, and our team will get in touch with you at alex@example.com. 
+
+Please keep in mind that this records your interest and is not a confirmed lesson booking yet. Is there a specific topic in Python you'd like to focus on first?
+SECOND TRACE: [
+  {
+    "event": "route",
+    "intent": "lead"
+  },
+  {
+    "event": "model",
+    "turn": 1,
+    "tool_names": [
+      "record_customer_interest"
+    ]
+  },
+  {
+    "event": "action_observation",
+    "name": "record_customer_interest",
+    "arguments": {
+      "message": "Interested in Python Starter tutoring and requested follow-up.",
+      "name": "Alex",
+      "email": "alex@example.com"
+    },
+    "observation": {
+      "status": "ok",
+      "kind": "lead",
+      "saved": true
+    }
+  },
+  {
+    "event": "model",
+    "turn": 2,
+    "tool_names": []
+  }
+]

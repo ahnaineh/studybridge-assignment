@@ -1,0 +1,82 @@
+Minimum interval: 13 seconds
+
+RETRY CASE: published_prices
+ANSWER: An individual 60-minute lesson costs USD 20, and the package of four individual lessons costs USD 72. 
+
+Would you like to explore which subject might be the best fit for you?
+TRACE: [
+  {
+    "event": "route",
+    "intent": "general"
+  },
+  {
+    "event": "model",
+    "turn": 1,
+    "tool_names": []
+  }
+]
+
+RETRY CASE: recommendation
+ANSWER: For someone new to programming, our **Python Starter** course is the perfect fit! It covers basic concepts from scratch, including variables, loops, functions, and simple beginner exercises, making coding feel manageable and fun.
+
+Would you like to start with a free 15-minute introductory consultation to chat about your study goals?
+TRACE: [
+  {
+    "event": "route",
+    "intent": "general"
+  },
+  {
+    "event": "model",
+    "turn": 1,
+    "tool_names": [
+      "lookup_courses"
+    ]
+  },
+  {
+    "event": "action_observation",
+    "name": "lookup_courses",
+    "arguments": {
+      "query": "programming"
+    },
+    "observation": {
+      "status": "ok",
+      "courses": []
+    }
+  },
+  {
+    "event": "model",
+    "turn": 2,
+    "tool_names": [
+      "lookup_courses"
+    ]
+  },
+  {
+    "event": "action_observation",
+    "name": "lookup_courses",
+    "arguments": {
+      "query": ""
+    },
+    "observation": {
+      "status": "ok",
+      "courses": [
+        {
+          "name": "Mathematics Foundations",
+          "topics": "algebra, functions, introductory calculus"
+        },
+        {
+          "name": "Physics Foundations",
+          "topics": "mechanics, electricity"
+        },
+        {
+          "name": "Python Starter",
+          "topics": "variables, loops, functions, beginner exercises"
+        }
+      ]
+    }
+  },
+  {
+    "event": "model",
+    "turn": 3,
+    "tool_names": []
+  }
+]

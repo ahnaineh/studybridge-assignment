@@ -1,0 +1,82 @@
+[
+  {
+    "setup": "Friendly Advisor / baseline",
+    "attempted": 7,
+    "responses": 2,
+    "provider_errors": 5,
+    "tool_passes": 2,
+    "mean_quality_out_of_8": 6.5
+  },
+  {
+    "setup": "Friendly Advisor / zero_shot",
+    "attempted": 7,
+    "responses": 3,
+    "provider_errors": 4,
+    "tool_passes": 3,
+    "mean_quality_out_of_8": 7.33
+  },
+  {
+    "setup": "Friendly Advisor / planning_cue",
+    "attempted": 7,
+    "responses": 1,
+    "provider_errors": 6,
+    "tool_passes": 1,
+    "mean_quality_out_of_8": 6.0
+  },
+  {
+    "setup": "Friendly Advisor / in_message",
+    "attempted": 7,
+    "responses": 3,
+    "provider_errors": 4,
+    "tool_passes": 2,
+    "mean_quality_out_of_8": 6.0
+  },
+  {
+    "setup": "Friendly Advisor / instructions_ablation",
+    "attempted": 2,
+    "responses": 1,
+    "provider_errors": 1,
+    "tool_passes": 1,
+    "mean_quality_out_of_8": 6.0
+  },
+  {
+    "setup": "Course Specialist / baseline",
+    "attempted": 7,
+    "responses": 5,
+    "provider_errors": 2,
+    "tool_passes": 5,
+    "mean_quality_out_of_8": 8.0
+  },
+  {
+    "setup": "Course Specialist / zero_shot",
+    "attempted": 7,
+    "responses": 3,
+    "provider_errors": 4,
+    "tool_passes": 3,
+    "mean_quality_out_of_8": 8.0
+  },
+  {
+    "setup": "Course Specialist / planning_cue",
+    "attempted": 7,
+    "responses": 1,
+    "provider_errors": 6,
+    "tool_passes": 1,
+    "mean_quality_out_of_8": 8.0
+  },
+  {
+    "setup": "Course Specialist / in_message",
+    "attempted": 7,
+    "responses": 1,
+    "provider_errors": 6,
+    "tool_passes": 1,
+    "mean_quality_out_of_8": 8.0
+  },
+  {
+    "setup": "Course Specialist / instructions_ablation",
+    "attempted": 2,
+    "responses": 0,
+    "provider_errors": 2,
+    "tool_passes": 0,
+    "mean_quality_out_of_8": null
+  }
+]

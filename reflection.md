@@ -1,0 +1,25 @@
+# C4 reflection
+
+## 1. Which persona was most helpful or natural?
+
+Course Specialist was my preferred setup for this business. Its successful answers were concise, gave the published prices exactly, and separated recorded interest from a confirmed booking. Friendly Advisor sounded warmer and offered more next steps, which could suit an unsure student, but several answers promised follow-up “soon” or implied that the team could contact a student who had not supplied contact information. There was also an awkward typo in one answer. My preference is based on reading the actual answers and tool traces, not on a claim that one temperature is universally better.
+
+## 2. Which prompt and configuration combination performed best?
+
+I would use Course Specialist with the full instructions in the system prompt and the worked example as the default. In the primary run this setup returned five of seven answers, all five passed the tool-name check, and the assistant-reviewed quality score averaged 8/8. Its zero-shot variant also scored 8/8 on the three answers returned, so this study does not establish that the example improved quality. The samples are small and unequal because 40 of 60 primary conversations ended with provider errors. The quality means exclude those errors and must not be interpreted as an overall reliability ranking. Persona comparisons change both the persona wording and sampling settings; they do not isolate temperature.
+
+## 3. How well did the agent reason and use tools?
+
+The loop handles native function calls explicitly: a model response reaches the action node, the tool executes, its observation returns to the model, and a final answer ends the graph. For example, Course Specialist used the name and Python interest from chat history together with the new email, saved Alex/alex@example.com, and then confirmed interest without claiming a booking. The C3 catalog trace also shows useful recovery: a search for “programming” returned no courses, the agent requested the full catalog, and then recommended Python Starter.
+
+The important limitation was Friendly Advisor with in-message instructions on the missing-email case. It copied alex@example.com from the worked example into a successful lead save, then asked the student for an email in the final text. The tool-name check caught the forbidden save; reviewing the arguments explained the mistake. I added a runtime check that permits a lead name/email only when it appears in the actual student messages. This prevents that demonstrated example-leakage error even if the model repeats it. The original result is retained; it is not rewritten as a pass. Public traces show actions and observations, not private chain-of-thought. The explicit stepwise condition requests internal reasoning and only a brief public summary; it does not switch provider thinking on or off.
+
+## 4. Did the instructions change behavior?
+
+The full instructions define the three tasks, require missing contact details, prohibit invented policies, and include a worked lead example. Successful runs followed these rules by asking for an email, recording feedback, and acknowledging unknown refund terms. However, instructions were not sufficient to prevent the example-email failure. In the primary instruction ablation, Friendly Advisor still logged the unknown refund question: the business sources and documented tools retained some guidance even after the detailed task rules were removed. Course Specialist's two ablation cases failed at the API level, so they provide no behavioral comparison. This is evidence of limited instruction benefit in the available sample, not proof that instructions are unnecessary. Prompt placement also produced unequal coverage; the one serious observed violation occurred with in-message instructions, but a single case cannot establish a general causal effect.
+
+## 5. What were the main challenges and fixes?
+
+The first live tool test exposed a protocol error: Gemini expects function observations in a user-role Content, rather than a “tool” role. Preserving the original model Content also keeps the SDK's function-call identifiers and signatures intact. Gradio needed structured chat-history handling and correctly shaped examples for its extra inputs. Request quotas and repeated 503/504 provider failures were the largest evaluation challenge. Calls are paced, transient generation failures have bounded retries, and already executed tools are not repeated by a generation retry. A per-turn cache also avoids repeating an identical action. These controls do not provide global deduplication across a new user request or a restarted session.
+
+This is a coursework prototype with local JSONL action records and short-term memory. It has no booking system, payment processing, persistent chat database, or guaranteed API availability. The evidence separates simulated regression checks, real Colab calls, and qualitative answer review. A larger repeated evaluation with fewer provider failures would be needed to make strong claims about prompt superiority.
