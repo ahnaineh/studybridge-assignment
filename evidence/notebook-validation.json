@@ -1,0 +1,10 @@
+{
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "notebook_status": {
+    "business_agent.ipynb": "passed in fresh kernel",
+    "react_agent.ipynb": "passed in fresh kernel",
+    "complete": true
+  },
+  "mode": "saved evidence; live/demo/experiment flags disabled",
+  "environment": "independent fresh Python kernels on existing Colab VM"
+}

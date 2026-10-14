@@ -89,6 +89,7 @@ python experiments.py --repeats 1
 python -m unittest discover -s tests -v
 ```
 
+The two runs contain 68 attempts, 25 returned answers and 43 provider failures.
 See `evidence/c4/EXPERIMENT_REPORT.md` for results and limits. Original provider
 errors remain visible. Quality scores were assigned by the assisting coding agent
 from the returned answer and action trace; they are qualitative and not independent

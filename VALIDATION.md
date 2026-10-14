@@ -22,7 +22,7 @@ The primary C4 study used requested/reported `gemini-3.5-flash-lite` throughout:
 answers passed the tool-name check. A worked-example email leak caused the
 remaining behavioral failure. It is retained in the original CSV and traces;
 the final code adds a student-message provenance check before recording a lead.
-See the experiment report for the focused extension, scores and limitations.
+The eight-case extension returned five answers, all passing the tool check, and three provider errors. Across both studies: 68 attempts, 25 returned answers and 43 provider failures. See the experiment report for scores and limitations.
 
 ## Software checks
 
@@ -47,8 +47,9 @@ is included.
 ## Scope and limits
 
 The SDK/manual-loop protocol and UI fixes were verified through actual Colab use.
-The later lead-provenance fix is covered by regression checks; the earlier primary
-experiment was not rerun in full after that patch. Provider failures remain a real
+The later lead-provenance fix passed regression checks and a targeted live Colab
+check: the example-email call was rejected, and the model asked for the missing
+email. The earlier primary experiment was not rerun in full after that patch. Provider failures remain a real
 runtime limitation and are surfaced honestly in the UI. A retry may follow a tool
 write that already succeeded; users should inspect logs before resubmitting.
 
