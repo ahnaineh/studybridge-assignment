@@ -1,58 +1,96 @@
 # Validation record
 
-Validation was performed on 13 October 2026. This record separates real model
-behavior from simulated checks and notebook execution.
+Final submission checks were completed on 20 October 2026 (Beirut time; 19 October
+UTC). The final guarded agent core has SHA-256
+`507c32c1584c35387b924e3c09335fd65d3e27766f5729b65a847c5978a6227b`.
+Each final-study source snapshot uses that same core.
 
-## Real Colab behavior
+## Live C4 behavior and comparisons
 
-C3 completed five behavior checks: published prices, a catalog recommendation,
-two-turn lead collection using history, an unknown refund-policy question and
-explicit feedback. The first price/recommendation attempts encountered service
-or minute-quota errors; their successful paced retries remain in evidence/.
-The full Flash request endpoint reported a newer backend version; its daily
-quota was exhausted before the C4 study. These C3 calls are not a controlled
-comparison against C4's model.
+The final matched matrix contains 47 setup/case pairs. It returned 43 answers on
+the initial pass. Three unanswered 503 cases and one unanswered 500 INTERNAL case
+were repeated successfully, giving 51 conversation attempts and 47 returned answers.
+The original failed attempts are retained. Individual generation retries inside a
+conversation are recorded separately; 51 is not the number of API requests.
 
-C3's Gradio browser test returned USD20 for an individual lesson and USD72 for
-the package. C4's browser test recommended Python Starter and returned the
-published scope/prices after an initial provider failure and UI retry.
+Both personas have returned answers for the same three cases in each prompt
+condition. Both seven-case baselines passed all seven expected tool checks,
+including lead collection, missing-email handling, unknown questions, explicit
+feedback and history-based collection. The temperature-only control also has
+three returned answers.
 
-The primary C4 study used requested/reported `gemini-3.5-flash-lite` throughout:
-60 attempted conversations, 20 answers and 40 provider errors. Nineteen returned
-answers passed the tool-name check. A worked-example email leak caused the
-remaining behavioral failure. It is retained in the original CSV and traces;
-the final code adds a student-message provenance check before recording a lead.
-The eight-case extension returned five answers, all passing the tool check, and three provider errors. Across both studies: 68 attempts, 25 returned answers and 43 provider failures. See the experiment report for scores and limitations.
+Across all 47 returned answers, 46 passed the automated tool check. Friendly Advisor
+with in-message instructions proposed an example-only email. The runtime rejected
+the save, and the final answer asked for the missing email without claiming a save.
+The attempted action is kept as a model error. No answered behavioral failure was
+repeated to obtain a better score.
 
-## Software checks
+See `evidence/c4/EXPERIMENT_REPORT.md` for matched comparisons, explicit qualitative
+review notes, raw CSV/JSONL, source snapshots, recovery selections and limits.
+The original 68-attempt study and interrupted sequential pilot remain separate
+from these final-study totals. Exported original evidence was restored locally
+and verified against `evidence/c4/balanced/files_sha256.json`.
 
-Eleven offline regression tests passed with the real SDK's Content/Part objects
-and scripted model responses. They cover native signatures, function observations
-using the user role, multiple calls, unknown calls, missing contact validation,
-example-data rejection, bounded loops, turn-level deduplication, and a transient
-generation retry that does not duplicate a persisted action.
+## Software and notebook checks
 
-The Gradio component tree constructs successfully with the pinned dependencies.
-Notebook schema and every code cell's Python syntax validate. Both notebooks were
-executed in independent fresh Python kernels on the existing Colab VM, using their
-saved-evidence mode. Live demonstration and full experiment rerun flags were off;
-this check verifies setup, definitions, source loading and result-display cells,
-not a new full live behavior run or a new Colab VM.
+All 11 offline regression tests passed again in Colab with the real SDK's
+Content/Part objects and scripted model responses. They cover native signatures,
+user-role function observations, multiple/unknown calls, required contacts,
+example-data rejection, bounded loops, history, per-turn deduplication and a
+transient generation retry that does not repeat an already persisted action.
+The output is in `evidence/final-offline-tests.txt`.
 
-Business PDF text was checked against the summary, and the one-page rendered
-profile was visually inspected. The submitted package contains synthetic contact
-details only. No key, .env, private contact record or persistent browser credential
-is included.
+Both final notebooks executed in independent fresh Python kernels on the existing
+Colab VM, in saved-evidence mode:
 
-## Scope and limits
+| Notebook | Executed code cells | Error outputs |
+|---|---:|---:|
+| `business_agent.ipynb` | 15/15 | 0 |
+| `react_agent.ipynb` | 18/18 | 0 |
 
-The SDK/manual-loop protocol and UI fixes were verified through actual Colab use.
-The later lead-provenance fix passed regression checks and a targeted live Colab
-check: the example-email call was rejected, and the model asked for the missing
-email. The earlier primary experiment was not rerun in full after that patch. Provider failures remain a real
-runtime limitation and are surfaced honestly in the UI. A retry may follow a tool
-write that already succeeded; users should inspect logs before resubmitting.
+Live demonstration, full experiment rerun and Gradio launch flags were off during
+this notebook check. It verifies setup, definitions, source loading, result display
+and saved traces; it is separate from the real model study above. The setup now
+keeps an already-open project instead of switching into an older extracted ZIP.
+The final execution record is `evidence/final-notebook-validation.json`.
 
-The project is a coursework prototype with local JSONL logging and short-term
-memory. Optional C3 reflection bonus and Hugging Face deployment were not claimed.
-The student still needs to record and submit the required video.
+Every Python file and notebook code cell passes a syntax check. The published
+aggregates are reproducible with `python summarize_results.py` from the original
+rows and the disclosed review annotations. All 47 returned answers were reviewed
+against the business facts and actual tool observations; the ratings are assisting-
+agent judgments, not independent human evaluation.
+
+## C3 and the recorded interface
+
+Earlier real C3 Colab checks completed published pricing, catalog recommendation,
+two-turn lead collection using history, unknown refund-policy logging and explicit
+feedback logging. Their original outputs and paced retries remain in `evidence/`.
+The Gradio interface was also used for the actual recorded demonstration.
+
+`media/studybridge_demo.mp4` is the final silent H.264 recording: 1280×720, 30 fps,
+about 2 minutes 11 seconds. It shows prices, asking for an email, saving interest
+using history, logging an unknown policy question, logging feedback and a C4
+Python Starter recommendation. Typing was retimed about 33% faster on average,
+with varied pace; idle API waits were shortened. Text and model responses are
+actual captured app content. File metadata and SHA-256 are in
+`media/recording-details.json`.
+
+The business PDF was checked against the summary and visually inspected; it was
+not changed during this final evaluation. Published contact details are synthetic.
+A private-key scan of the curated export passed. No `.env`, API key or browser
+credential is included in the repository.
+
+## Submission boundary and prototype limits
+
+The repository contains both notebooks, business files, implementation, evidence,
+reflection and video. `submission_link.txt` links to the repository, each assignment
+notebook, the video and the C4 report. The user will upload its Desktop copy to
+both Moodle assignment pages; Moodle submission is not claimed here.
+
+The project records interest rather than booking or payment. Logs and short-term
+history do not provide a production database or global deduplication. A tool write
+can precede a provider failure, so a new user request can create a duplicate record.
+Provider availability and some unsupported callback wording remain observed limits.
+One repetition per condition does not establish a general winning prompt.
+Optional C3 live reflection-bonus evidence and Hugging Face Spaces hosting are not
+claimed as completed bonuses.

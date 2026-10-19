@@ -1,0 +1,21 @@
+{
+  "round": 1,
+  "source_csvs": [
+    "/content/studybridge-assignment-main/results/20261019T210733396620Z/comparison.csv"
+  ],
+  "pairs": [
+    [
+      "Friendly Advisor / baseline",
+      "complete_lead"
+    ],
+    [
+      "Friendly Advisor / baseline",
+      "memory"
+    ],
+    [
+      "Friendly Advisor / baseline",
+      "unknown_policy"
+    ]
+  ],
+  "selection": "Only 503/504 cases without any returned answer. Behavioral failures are retained and not rerun."
+}

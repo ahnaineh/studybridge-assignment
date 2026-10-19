@@ -23,7 +23,7 @@ actual result logs, and five completed reflection answers.
 [![StudyBridge functionality demonstration](media/demo-preview.jpg)](media/studybridge_demo.mp4)
 
 [Watch/download the silent demo video](media/studybridge_demo.mp4) ·
-[Submission guide](SUBMISSION.md) · [Moodle link file](submission_link.txt)
+[Submission guide](SUBMISSION.md) · [Requirement map](REQUIREMENTS.md) · [Moodle link file](submission_link.txt)
 
 The video shows actual C3 price, lead, memory, unknown-policy and feedback flows,
 then a C4 course recommendation. Typing speed varies and idle API waits are shortened.
@@ -32,7 +32,7 @@ not claimed as completed.
 
 ## Run in Colab
 
-Open either notebook above and run its setup, installation and key cells. Setup
+Open either notebook above in a fresh Colab runtime and run its setup, installation and key cells. Setup
 fetches this public repository when project files are absent. Add a Colab Secret
 named `GEMINI_API_KEY`, or enter the key through the hidden prompt. Never save it
 in a notebook cell or output. The default model is `gemini-3.5-flash-lite`.
@@ -48,7 +48,7 @@ persona for comparison. Use synthetic contacts such as alex@example.com.
 Python 3.11 or newer:
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
@@ -78,40 +78,60 @@ not bookings or payments. It cannot invent refund policies or available slots.
 
 ## C4 evaluation
 
-Friendly Advisor uses temperature 0.7, top-p 0.95, top-k 40. Course Specialist uses
-0.2, 0.8 and 20. Both allow 2048 output tokens. Persona comparisons therefore test
-the complete configuration, not temperature in isolation.
+The final guarded implementation has returned answers for all **47 planned cases**.
+The 47-case matrix plus four provider-error recovery attempts produced **51 conversation
+attempts, 47 answers and 46 tool-check passes**. The remaining case attempted an
+example-only email; runtime validation blocked the save, and the final reply asked
+for the missing email. Original failed attempts remain visible.
 
-The primary study contains 60 conversations: two personas × four prompt setups ×
-seven cases, plus two instruction-ablation cases per persona. The setups are a
-system baseline with one worked example, zero-shot, a planning cue, and in-message
-placement. A focused extension tests two-example few-shot and explicit internal
-stepwise reasoning. Provider thinking settings are unchanged; no private reasoning
-is logged. The full current runner covers 68 conversations:
+Both personas are compared on the same recommendation, missing-email and unknown-policy
+cases. Conditions cover zero/one/two examples, direct versus stepwise prompting,
+system versus in-message instructions and a detailed-instructions ablation. Each
+baseline also covers the four other functional cases. A temperature-only specialist
+control holds its wording/top-p/top-k fixed. This closes the earlier uneven coverage.
+
+Friendly Advisor uses temperature 0.7, top-p 0.95, top-k 40; Course Specialist uses
+0.2, 0.8 and 20. Both allow 2048 output tokens. The preferred reviewed business setup
+is Course Specialist with two examples (`fewshot_extra=True`); it ties with several
+advisor setups, so there is no uniquely established winner. The Gradio UI uses the
+one-example baseline. The stepwise comparison changes the prompt, not provider
+thinking settings; public actions/observations are logged without private reasoning.
 
 ```bash
+python experiments.py --balanced --workers 3
 python experiments.py --smoke
-python experiments.py --repeats 1
+python summarize_results.py
 python -m unittest discover -s tests -v
 ```
 
-The two runs contain 68 attempts, 25 returned answers and 43 provider failures.
-See `evidence/c4/EXPERIMENT_REPORT.md` for results and limits. Original provider
-errors remain visible. Quality scores were assigned by the assisting coding agent
-from the returned answer and action trace; they are qualitative and not independent
-human evaluation. No quality score is assigned to provider-error rows.
+To recover only unanswered server-error cases, add `--retry-errors-from CSV [CSV ...]`
+to the balanced runner. Previously returned behavioral failures are never replaced.
+The legacy full runner (`python experiments.py --repeats 1`) still covers 68 cases.
+Opening a notebook uses saved evidence; live calls remain opt-in.
+
+See [the final experiment report](evidence/c4/EXPERIMENT_REPORT.md),
+[review notes](evidence/c4/balanced_review_notes.json), and
+[all attempts](evidence/c4/balanced_scored_all_attempts.csv). Original CSV/JSONL,
+configurations, source snapshots and file hashes are retained. Earlier studies and
+an interrupted sequential pilot are kept separately from the final-study totals.
+
+Quality scores were assigned by the assisting coding agent from returned answers
+and tool observations. They are qualitative, with one repetition and three common
+cases per setup; they are not independent human ratings. No quality score is assigned
+to provider-error rows. Runtime includes queueing and retries, so it is not a fair
+speed ranking.
 
 | Criterion | 0 | 1 | 2 |
 |---|---|---|---|
-| Grounded | Unsupported/wrong facts | Mostly correct or incomplete | Accurate; unknowns explicit |
+| Grounded | Unsupported/wrong facts or arguments | Mostly correct or incomplete | Accurate; unknowns explicit |
 | Helpful | Fails request or harmful action | Partly useful | Complete answer or useful next step |
-| Natural | Inappropriate/awkward | Acceptable | Clear and fits the persona |
+| Natural | Inappropriate/awkward | Acceptable but verbose or awkward | Clear and fits the persona |
 | Instructions | Important violation | Minor omission | Respects rules and tool outcomes |
 
-The automated tool check only verifies expected successful tool names and forbidden
-calls. It does not establish factual accuracy or correct arguments. Original
-synthetic logs are included only in curated evidence; ordinary `logs/` and `results/`
-are ignored to avoid accidental publication of real contacts.
+The automated check verifies expected successful tool names and forbidden attempts;
+a blocked forbidden call still fails that check. Factual accuracy and arguments
+require separate review. Only curated synthetic logs are published; ordinary
+`logs/` and `results/` remain ignored.
 
 ## Submission
 

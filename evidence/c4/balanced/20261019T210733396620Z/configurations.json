@@ -1,0 +1,269 @@
+[
+  {
+    "id": "Friendly Advisor / baseline",
+    "persona": "Friendly Advisor",
+    "persona_config": {
+      "name": "Friendly Advisor",
+      "prompt": "You are Lina, StudyBridge's friendly study advisor. Your task is to help unsure students choose a subject and a manageable first step. Use everyday words, a warm tone, short explanations, and at most one clarifying question. Value confidence and accessibility without promising results.",
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": 40,
+      "max_output_tokens": 2048
+    },
+    "examples": true,
+    "planning": false,
+    "placement": "system",
+    "instructions_enabled": true
+  },
+  {
+    "id": "Friendly Advisor / zero_shot",
+    "persona": "Friendly Advisor",
+    "persona_config": {
+      "name": "Friendly Advisor",
+      "prompt": "You are Lina, StudyBridge's friendly study advisor. Your task is to help unsure students choose a subject and a manageable first step. Use everyday words, a warm tone, short explanations, and at most one clarifying question. Value confidence and accessibility without promising results.",
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": 40,
+      "max_output_tokens": 2048
+    },
+    "examples": false,
+    "planning": false,
+    "placement": "system",
+    "instructions_enabled": true,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  },
+  {
+    "id": "Friendly Advisor / in_message",
+    "persona": "Friendly Advisor",
+    "persona_config": {
+      "name": "Friendly Advisor",
+      "prompt": "You are Lina, StudyBridge's friendly study advisor. Your task is to help unsure students choose a subject and a manageable first step. Use everyday words, a warm tone, short explanations, and at most one clarifying question. Value confidence and accessibility without promising results.",
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": 40,
+      "max_output_tokens": 2048
+    },
+    "examples": true,
+    "planning": false,
+    "placement": "message",
+    "instructions_enabled": true,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  },
+  {
+    "id": "Friendly Advisor / instructions_ablation",
+    "persona": "Friendly Advisor",
+    "persona_config": {
+      "name": "Friendly Advisor",
+      "prompt": "You are Lina, StudyBridge's friendly study advisor. Your task is to help unsure students choose a subject and a manageable first step. Use everyday words, a warm tone, short explanations, and at most one clarifying question. Value confidence and accessibility without promising results.",
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": 40,
+      "max_output_tokens": 2048
+    },
+    "examples": false,
+    "planning": false,
+    "placement": "system",
+    "instructions_enabled": false,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  },
+  {
+    "id": "Friendly Advisor / two_example_few_shot",
+    "persona": "Friendly Advisor",
+    "persona_config": {
+      "name": "Friendly Advisor",
+      "prompt": "You are Lina, StudyBridge's friendly study advisor. Your task is to help unsure students choose a subject and a manageable first step. Use everyday words, a warm tone, short explanations, and at most one clarifying question. Value confidence and accessibility without promising results.",
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": 40,
+      "max_output_tokens": 2048
+    },
+    "examples": true,
+    "planning": false,
+    "placement": "system",
+    "instructions_enabled": true,
+    "fewshot_extra": true,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  },
+  {
+    "id": "Friendly Advisor / stepwise_reasoning",
+    "persona": "Friendly Advisor",
+    "persona_config": {
+      "name": "Friendly Advisor",
+      "prompt": "You are Lina, StudyBridge's friendly study advisor. Your task is to help unsure students choose a subject and a manageable first step. Use everyday words, a warm tone, short explanations, and at most one clarifying question. Value confidence and accessibility without promising results.",
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": 40,
+      "max_output_tokens": 2048
+    },
+    "examples": true,
+    "planning": true,
+    "placement": "system",
+    "instructions_enabled": true,
+    "stepwise_reasoning": true,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  },
+  {
+    "id": "Course Specialist / baseline",
+    "persona": "Course Specialist",
+    "persona_config": {
+      "name": "Course Specialist",
+      "prompt": "You are Sami, StudyBridge's precise course specialist. Your task is to compare services, prices, scope, and limitations. Use neutral language and concise bullets where helpful. Value factual accuracy and explicitly identify missing information. Be respectful and clear.",
+      "temperature": 0.2,
+      "top_p": 0.8,
+      "top_k": 20,
+      "max_output_tokens": 2048
+    },
+    "examples": true,
+    "planning": false,
+    "placement": "system",
+    "instructions_enabled": true
+  },
+  {
+    "id": "Course Specialist / zero_shot",
+    "persona": "Course Specialist",
+    "persona_config": {
+      "name": "Course Specialist",
+      "prompt": "You are Sami, StudyBridge's precise course specialist. Your task is to compare services, prices, scope, and limitations. Use neutral language and concise bullets where helpful. Value factual accuracy and explicitly identify missing information. Be respectful and clear.",
+      "temperature": 0.2,
+      "top_p": 0.8,
+      "top_k": 20,
+      "max_output_tokens": 2048
+    },
+    "examples": false,
+    "planning": false,
+    "placement": "system",
+    "instructions_enabled": true,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  },
+  {
+    "id": "Course Specialist / in_message",
+    "persona": "Course Specialist",
+    "persona_config": {
+      "name": "Course Specialist",
+      "prompt": "You are Sami, StudyBridge's precise course specialist. Your task is to compare services, prices, scope, and limitations. Use neutral language and concise bullets where helpful. Value factual accuracy and explicitly identify missing information. Be respectful and clear.",
+      "temperature": 0.2,
+      "top_p": 0.8,
+      "top_k": 20,
+      "max_output_tokens": 2048
+    },
+    "examples": true,
+    "planning": false,
+    "placement": "message",
+    "instructions_enabled": true,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  },
+  {
+    "id": "Course Specialist / instructions_ablation",
+    "persona": "Course Specialist",
+    "persona_config": {
+      "name": "Course Specialist",
+      "prompt": "You are Sami, StudyBridge's precise course specialist. Your task is to compare services, prices, scope, and limitations. Use neutral language and concise bullets where helpful. Value factual accuracy and explicitly identify missing information. Be respectful and clear.",
+      "temperature": 0.2,
+      "top_p": 0.8,
+      "top_k": 20,
+      "max_output_tokens": 2048
+    },
+    "examples": false,
+    "planning": false,
+    "placement": "system",
+    "instructions_enabled": false,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  },
+  {
+    "id": "Course Specialist / two_example_few_shot",
+    "persona": "Course Specialist",
+    "persona_config": {
+      "name": "Course Specialist",
+      "prompt": "You are Sami, StudyBridge's precise course specialist. Your task is to compare services, prices, scope, and limitations. Use neutral language and concise bullets where helpful. Value factual accuracy and explicitly identify missing information. Be respectful and clear.",
+      "temperature": 0.2,
+      "top_p": 0.8,
+      "top_k": 20,
+      "max_output_tokens": 2048
+    },
+    "examples": true,
+    "planning": false,
+    "placement": "system",
+    "instructions_enabled": true,
+    "fewshot_extra": true,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  },
+  {
+    "id": "Course Specialist / stepwise_reasoning",
+    "persona": "Course Specialist",
+    "persona_config": {
+      "name": "Course Specialist",
+      "prompt": "You are Sami, StudyBridge's precise course specialist. Your task is to compare services, prices, scope, and limitations. Use neutral language and concise bullets where helpful. Value factual accuracy and explicitly identify missing information. Be respectful and clear.",
+      "temperature": 0.2,
+      "top_p": 0.8,
+      "top_k": 20,
+      "max_output_tokens": 2048
+    },
+    "examples": true,
+    "planning": true,
+    "placement": "system",
+    "instructions_enabled": true,
+    "stepwise_reasoning": true,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  },
+  {
+    "id": "Course Specialist / temperature_only_0.7",
+    "persona": "Course Specialist",
+    "persona_config": {
+      "name": "Course Specialist",
+      "prompt": "You are Sami, StudyBridge's precise course specialist. Your task is to compare services, prices, scope, and limitations. Use neutral language and concise bullets where helpful. Value factual accuracy and explicitly identify missing information. Be respectful and clear.",
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "max_output_tokens": 2048
+    },
+    "examples": true,
+    "planning": false,
+    "placement": "system",
+    "instructions_enabled": true,
+    "case_ids": [
+      "recommendation",
+      "missing_email",
+      "unknown_policy"
+    ]
+  }
+]

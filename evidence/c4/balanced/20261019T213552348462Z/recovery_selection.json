@@ -1,0 +1,13 @@
+{
+  "source_csvs": [
+    "/content/studybridge-assignment-main/results/20261019T210733396620Z/comparison.csv",
+    "/content/studybridge-assignment-main/results/20261019T213302425318Z/comparison.csv"
+  ],
+  "pairs": [
+    [
+      "Friendly Advisor / two_example_few_shot",
+      "missing_email"
+    ]
+  ],
+  "selection": "Unanswered provider 500/503/504 cases only. Previously returned behavior is not retried."
+}

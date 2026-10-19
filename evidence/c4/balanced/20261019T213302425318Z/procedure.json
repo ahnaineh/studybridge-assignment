@@ -1,0 +1,8 @@
+{
+  "balanced": true,
+  "repeats": 1,
+  "workers": 3,
+  "minimum_request_interval_seconds": "13",
+  "pacing": "One shared request-start lock across all workers; separate conversation state.",
+  "latency_note": "Elapsed time includes waiting for the shared request slot; not a model speed ranking."
+}

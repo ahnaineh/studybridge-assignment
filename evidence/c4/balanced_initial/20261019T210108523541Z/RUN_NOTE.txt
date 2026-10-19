@@ -1,0 +1,1 @@
+Initial sequential attempt interrupted to use three independent conversation workers with the same global 13-second request-start pacing. All partial rows and synthetic action logs retained; excluded from the final matched-study totals.

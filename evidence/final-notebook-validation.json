@@ -1,0 +1,23 @@
+{
+  "date_utc": "2026-10-19T21:47:35Z",
+  "python": "3.13.16",
+  "mode": "Saved-evidence mode; no live API calls.",
+  "key_mode": "Existing private environment key",
+  "notebooks": [
+    {
+      "file": "business_agent.ipynb",
+      "code_cells": 15,
+      "executed_code_cells": 15,
+      "error_outputs": 0,
+      "elapsed_seconds": 14.847
+    },
+    {
+      "file": "react_agent.ipynb",
+      "code_cells": 18,
+      "executed_code_cells": 18,
+      "error_outputs": 0,
+      "elapsed_seconds": 21.605
+    }
+  ],
+  "core_sha256": "507c32c1584c35387b924e3c09335fd65d3e27766f5729b65a847c5978a6227b"
+}

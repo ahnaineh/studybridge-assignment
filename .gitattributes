@@ -1,0 +1,4 @@
+# Preserve the exact bytes of curated evidence and recorded model outputs.
+evidence/** -text
+evidence/**/*.csv -whitespace
+media/*.mp4 -text

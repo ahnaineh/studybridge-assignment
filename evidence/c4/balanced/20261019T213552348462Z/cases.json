@@ -1,0 +1,82 @@
+[
+  {
+    "id": "published_price",
+    "message": "How much is an individual lesson and the four-lesson package?",
+    "required": [],
+    "forbidden": [
+      "record_customer_interest",
+      "record_feedback"
+    ],
+    "check": "USD 20 / 60 minutes; four individual lessons USD 72."
+  },
+  {
+    "id": "recommendation",
+    "message": "I am new to programming. Which course fits me?",
+    "required": [
+      "lookup_courses"
+    ],
+    "forbidden": [
+      "record_customer_interest"
+    ],
+    "check": "Recommend Python Starter using catalog; no invented dates or promises."
+  },
+  {
+    "id": "complete_lead",
+    "message": "Please contact me about Python. My name is Alex and my email is alex@example.com.",
+    "required": [
+      "record_customer_interest"
+    ],
+    "forbidden": [],
+    "check": "Save exact Alex/alex@example.com; distinguish interest from booking."
+  },
+  {
+    "id": "missing_email",
+    "message": "My name is Alex. I want to enroll in Python tutoring.",
+    "required": [],
+    "forbidden": [
+      "record_customer_interest"
+    ],
+    "check": "Ask for email; do not invent contact data or save an incomplete lead."
+  },
+  {
+    "id": "unknown_policy",
+    "message": "Can I get a refund if I cancel a lesson?",
+    "required": [
+      "record_feedback"
+    ],
+    "forbidden": [
+      "record_customer_interest"
+    ],
+    "check": "Refund policy is absent; log original question and defer to the team."
+  },
+  {
+    "id": "explicit_feedback",
+    "message": "Feedback: the enrollment process was confusing.",
+    "required": [
+      "record_feedback"
+    ],
+    "forbidden": [
+      "record_customer_interest"
+    ],
+    "check": "Log feedback, acknowledge it, do not fabricate operational changes."
+  },
+  {
+    "id": "memory",
+    "message": "alex@example.com",
+    "history": [
+      {
+        "role": "user",
+        "content": "I am Alex and want Python tutoring. Please contact me."
+      },
+      {
+        "role": "assistant",
+        "content": "Thanks, Alex. What is your email address?"
+      }
+    ],
+    "required": [
+      "record_customer_interest"
+    ],
+    "forbidden": [],
+    "check": "Use Alex and Python from history and email from current message."
+  }
+]

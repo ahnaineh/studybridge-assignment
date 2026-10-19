@@ -1,0 +1,425 @@
+{
+  "Friendly Advisor / baseline :: published_price": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Published USD 20 individual lesson / USD 72 four-lesson package stated accurately; no unnecessary write tool."
+  },
+  "Friendly Advisor / baseline :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Friendly Advisor / baseline :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Friendly Advisor / baseline :: explicit_feedback": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Feedback content is recorded before acknowledgment; no invented change to the enrollment process."
+  },
+  "Friendly Advisor / zero_shot :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Friendly Advisor / zero_shot :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Friendly Advisor / zero_shot :: unknown_policy": {
+    "scores": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "notes": "Logs the original refund question and correctly admits missing policy, but implies a personal follow-up without collecting contact details. Minor helpfulness/instruction omission."
+  },
+  "Friendly Advisor / in_message :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Friendly Advisor / in_message :: missing_email": {
+    "scores": [
+      0,
+      2,
+      2,
+      0
+    ],
+    "notes": "Model requests a save using alex@example.com from the worked example. The runtime rejects it before persistence, and the final answer asks for email without claiming a save. Helpful final outcome, but incorrect proposed arguments and important model instruction violation remain scored."
+  },
+  "Friendly Advisor / in_message :: unknown_policy": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Original refund question is logged; absent policy acknowledged without inventing refund terms or claiming a refund is available."
+  },
+  "Friendly Advisor / instructions_ablation :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Friendly Advisor / instructions_ablation :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Friendly Advisor / instructions_ablation :: unknown_policy": {
+    "scores": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "notes": "Logs the original refund question and correctly admits missing policy, but implies a personal follow-up without collecting contact details. Minor helpfulness/instruction omission."
+  },
+  "Friendly Advisor / two_example_few_shot :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Friendly Advisor / two_example_few_shot :: unknown_policy": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Original refund question is logged; absent policy acknowledged without inventing refund terms or claiming a refund is available."
+  },
+  "Friendly Advisor / stepwise_reasoning :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Friendly Advisor / stepwise_reasoning :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Friendly Advisor / stepwise_reasoning :: unknown_policy": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Original refund question is logged; absent policy acknowledged without inventing refund terms or claiming a refund is available."
+  },
+  "Course Specialist / baseline :: published_price": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Published USD 20 individual lesson / USD 72 four-lesson package stated accurately; no unnecessary write tool."
+  },
+  "Course Specialist / baseline :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Course Specialist / baseline :: complete_lead": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Exact user-supplied Alex/alex@example.com and Python follow-up interest saved; answer explicitly distinguishes interest from booking."
+  },
+  "Course Specialist / baseline :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Course Specialist / baseline :: unknown_policy": {
+    "scores": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "notes": "Logs the original refund question and correctly admits missing policy, but implies a personal follow-up without collecting contact details. Minor helpfulness/instruction omission."
+  },
+  "Course Specialist / baseline :: explicit_feedback": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Feedback content is recorded before acknowledgment; no invented change to the enrollment process."
+  },
+  "Course Specialist / baseline :: memory": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "User-history name and Python interest plus current email produce the correct lead; no booking is claimed."
+  },
+  "Course Specialist / zero_shot :: recommendation": {
+    "scores": [
+      2,
+      2,
+      1,
+      2
+    ],
+    "notes": "Catalog, founder role, pricing and delivery are supported. Response is unnecessarily long for a simple beginner-course question, reducing naturalness."
+  },
+  "Course Specialist / zero_shot :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Course Specialist / zero_shot :: unknown_policy": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Original refund question is logged; absent policy acknowledged without inventing refund terms or claiming a refund is available."
+  },
+  "Course Specialist / in_message :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Course Specialist / in_message :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Course Specialist / in_message :: unknown_policy": {
+    "scores": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "notes": "Logs the original refund question and correctly admits missing policy, but implies a personal follow-up without collecting contact details. Minor helpfulness/instruction omission."
+  },
+  "Course Specialist / instructions_ablation :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Course Specialist / instructions_ablation :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Course Specialist / instructions_ablation :: unknown_policy": {
+    "scores": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "notes": "Logs the original refund question and correctly admits missing policy, but implies a personal follow-up without collecting contact details. Minor helpfulness/instruction omission."
+  },
+  "Course Specialist / two_example_few_shot :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Course Specialist / two_example_few_shot :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Course Specialist / two_example_few_shot :: unknown_policy": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Original refund question is logged; absent policy acknowledged without inventing refund terms or claiming a refund is available."
+  },
+  "Course Specialist / stepwise_reasoning :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Course Specialist / stepwise_reasoning :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Course Specialist / stepwise_reasoning :: unknown_policy": {
+    "scores": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "notes": "Logs the original refund question and correctly admits missing policy, but implies a personal follow-up without collecting contact details. Minor helpfulness/instruction omission."
+  },
+  "Course Specialist / temperature_only_0.7 :: recommendation": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Python Starter and its scope match the returned catalog; published options remain grounded."
+  },
+  "Course Specialist / temperature_only_0.7 :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  },
+  "Course Specialist / temperature_only_0.7 :: unknown_policy": {
+    "scores": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "notes": "Logs the original refund question and correctly admits missing policy, but implies a personal follow-up without collecting contact details. Minor helpfulness/instruction omission."
+  },
+  "Friendly Advisor / baseline :: complete_lead": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Exact user-supplied Alex/alex@example.com and Python follow-up interest saved; answer explicitly distinguishes interest from booking."
+  },
+  "Friendly Advisor / baseline :: unknown_policy": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Original refund question logged; absent policy acknowledged; asks for name/email for follow-up rather than assuming contact information exists."
+  },
+  "Friendly Advisor / baseline :: memory": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "User-history name and Python interest plus current email produce the correct lead; no booking is claimed."
+  },
+  "Friendly Advisor / two_example_few_shot :: missing_email": {
+    "scores": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "notes": "Asks for the missing email and does not request a lead save; optional Python catalog lookup is consistent with the student interest."
+  }
+}

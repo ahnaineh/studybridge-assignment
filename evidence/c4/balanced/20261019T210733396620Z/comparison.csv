@@ -1,0 +1,141 @@
+setup,case,repeat,model_requested,model_versions,temperature,top_p,top_k,max_output_tokens,examples,planning,placement,latency_seconds,api_latency_seconds,instructions_enabled,example_count,stepwise_reasoning,model_turns,api_retries,successful_tools,tool_check,answer,error,error_detail,grounded_0_2,helpful_0_2,natural_0_2,instruction_following_0_2,notes
+Friendly Advisor / baseline,published_price,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,system,113.041,25.994,True,1,False,1,2,[],1,"An individual 60-minute lesson costs USD 20, and a package of four individual lessons costs USD 72.",,,,,,,
+Friendly Advisor / baseline,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,system,206.245,97.244,True,1,False,3,1,"[""lookup_courses"", ""lookup_courses""]",1,"For beginners, our **Python Starter** course is a great fit. It covers the basics like variables, loops, and functions with beginner-friendly exercises to help you build confidence step by step. 
+
+Would you like to try a free 15-minute introductory consultation to chat about your goals?",,,,,,,
+Friendly Advisor / baseline,complete_lead,1,gemini-3.5-flash-lite,,0.7,0.95,40,2048,True,False,system,118.976,,True,1,False,,,,0,,ServerError: 503,"503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",,,,,
+Friendly Advisor / baseline,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,system,103.115,35.823,True,1,False,2,1,"[""lookup_courses""]",1,"Thanks, Alex! I see you want to enroll in Python tutoring (our Python Starter course covering variables, loops, functions, and beginner exercises). 
+
+Could you please share your email address so I can record your interest and have the team follow up with you? (Please note that recording your interest is not a confirmed booking.)",,,,,,,
+Friendly Advisor / baseline,unknown_policy,1,gemini-3.5-flash-lite,,0.7,0.95,40,2048,True,False,system,81.485,,True,1,False,,,,0,,ServerError: 503,"503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",,,,,
+Friendly Advisor / baseline,explicit_feedback,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,system,94.207,42.986,True,1,False,2,1,"[""record_feedback""]",1,Thanks for letting us know. I've shared your feedback with our team so we can make things clearer. Would you like help finding a subject or taking a first step?,,,,,,,
+Friendly Advisor / baseline,memory,1,gemini-3.5-flash-lite,,0.7,0.95,40,2048,True,False,system,172.229,,True,1,False,,,,0,,ServerError: 503,"503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",,,,,
+Friendly Advisor / zero_shot,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,False,False,system,193.771,90.924,True,0,False,3,2,"[""lookup_courses"", ""lookup_courses""]",1,"For a beginner in programming, Python Starter is a great fit. It covers the basics like variables, loops, functions, and beginner exercises with approachable explanations. 
+
+Would you like to try a free 15-minute introductory consultation to help you get started?",,,,,,,
+Friendly Advisor / zero_shot,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,False,False,system,172.037,51.928,True,0,False,2,2,"[""lookup_courses""]",1,"It's great to hear you're interested in Python Starter! To help the team get in touch about your enrollment and next steps, could you please share your email address?",,,,,,,
+Friendly Advisor / zero_shot,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,False,False,system,106.096,55.854,True,0,False,2,0,"[""record_feedback""]",1,"I have shared your question about our refund policy with the team so they can get back to you, as our current information does not specify refund details. 
+
+Is there a particular subject you are exploring, like Math, Physics, or Python, that I can help you with in the meantime?",,,,,,,
+Friendly Advisor / in_message,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,message,248.032,72.723,True,1,False,3,4,"[""lookup_courses"", ""lookup_courses""]",1,"For a beginner in programming, our Python Starter course is a great fit. It covers the basics like variables, loops, functions, and beginner exercises with a patient, step-by-step approach. 
+
+Would you like to try a free 15-minute introductory consultation to see how it works?",,,,,,,
+Friendly Advisor / in_message,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,message,140.098,48.174,True,1,False,2,1,[],0,Hi Alex! I'd love to help you get started with Python tutoring. What is the best email address to reach you at so we can follow up?,,,,,,,
+Friendly Advisor / in_message,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,message,96.556,34.264,True,1,False,2,1,"[""record_feedback""]",1,"I've logged your question about our refund policy, since exact refund details aren't specified in our information. Our team will need to confirm that for you. 
+
+Would you like to explore our subjects like Mathematics, Physics, or Python while you wait?",,,,,,,
+Friendly Advisor / instructions_ablation,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,False,False,system,88.608,37.308,False,0,False,2,0,"[""lookup_courses""]",1,"Hello! If you are new to programming, our **Python Starter** course is a great fit. It covers the basics like variables, loops, functions, and beginner exercises with patient, step-by-step guidance. 
+
+We can also start with a free 15-minute introductory chat to see what you'd like to build. Would you like to know more about how our lessons work?",,,,,,,
+Friendly Advisor / instructions_ablation,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,False,False,system,112.5,28.786,False,0,False,2,1,"[""lookup_courses""]",1,"Hi Alex! That is wonderful. Python Starter is a great way to build confidence with variables, loops, and beginner exercises. 
+
+To help us get you set up for follow-up and make sure we have everything ready, could you please share your email address and any specific goals you have for learning Python?",,,,,,,
+Friendly Advisor / instructions_ablation,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,False,False,system,114.361,33.563,False,0,False,2,1,"[""record_feedback""]",1,"I've noted down your question about refunds. Exact details on refunds aren't specified in our information, so I've shared it with our team so they can get back to you with the right answer. 
+
+In the meantime, is there a particular subject you'd like to explore, or would you like to chat about our study plans?",,,,,,,
+Friendly Advisor / two_example_few_shot,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,system,66.77,33.863,True,2,False,2,0,"[""lookup_courses""]",1,"For starting out in programming, Python Starter is a great fit. It covers the basics like variables, loops, functions, and beginner exercises with approachable guidance. 
+
+Would you like to try a free 15-minute introductory consultation to chat about your goals?",,,,,,,
+Friendly Advisor / two_example_few_shot,missing_email,1,gemini-3.5-flash-lite,,0.7,0.95,40,2048,True,False,system,22.882,,True,2,False,,,,0,,ServerError: 500,"500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}",,,,,
+Friendly Advisor / two_example_few_shot,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,system,164.493,35.843,True,2,False,2,3,"[""record_feedback""]",1,The profile does not specify a refund policy. I logged your question so the team can confirm it. I cannot promise that a refund is available.,,,,,,,
+Friendly Advisor / stepwise_reasoning,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,True,system,94.683,32.223,True,1,True,2,0,"[""lookup_courses""]",1,"For starting out with programming, **Python Starter** is a great fit. It covers the basics like variables, loops, functions, and beginner exercises with patient, step-by-step guidance. 
+
+Would you like to start with a free 15-minute introductory consultation to chat about your goals?",,,,,,,
+Friendly Advisor / stepwise_reasoning,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,True,system,52.117,17.429,True,1,True,1,0,[],1,"Thanks, Alex. Could you please share your email address so I can record your interest in Python tutoring for follow-up? (Please note that recording interest does not confirm a lesson booking.)",,,,,,,
+Friendly Advisor / stepwise_reasoning,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,True,system,94.07,37.352,True,1,True,2,0,"[""record_feedback""]",1,"I've logged your question about our refund policy, since refund details aren't listed in our business profile. Our team will need to confirm this for you. 
+
+Is there anything else I can help you with today?",,,,,,,
+Course Specialist / baseline,published_price,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,system,88.844,16.602,True,1,False,1,1,[],1,"An individual 60-minute lesson costs USD 20, and a package of four individual lessons costs USD 72.",,,,,,,
+Course Specialist / baseline,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,system,63.229,16.866,True,1,False,2,0,"[""lookup_courses""]",1,"For a beginner in programming, StudyBridge offers **Python Starter**. 
+
+* **Scope:** Covers variables, loops, functions, and beginner exercises.
+* **Languages:** Sessions take place online in English or Arabic.
+* **Format options:** 
+  * Individual lessons (60 minutes): USD 20, or a package of four for USD 72.
+  * Small-group lessons (up to 4 students): USD 10 per student per 60-minute session.
+* **Consultation:** A free 15-minute introductory consultation is available to help you get started (note that this is a consultation to help choose a subject, not a full lesson).
+
+Would you like to schedule a free introductory consultation or request follow-up about Python Starter? If so, please provide your name and email.",,,,,,,
+Course Specialist / baseline,complete_lead,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,system,58.4,13.805,True,1,False,2,0,"[""record_customer_interest""]",1,"Thanks, Alex. I recorded your interest in Python tutoring for follow-up. This does not confirm a lesson booking.",,,,,,,
+Course Specialist / baseline,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,system,101.371,44.701,True,1,False,2,0,"[""lookup_courses""]",1,"Thanks, Alex. You mentioned your name and your interest in Python tutoring, but I still need your email address to record your request for follow-up. Could you please share your email? 
+
+(Note: Recording your interest initiates follow-up and does not confirm a lesson booking or payment.)",,,,,,,
+Course Specialist / baseline,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,system,64.658,1.836,True,1,False,2,0,"[""record_feedback""]",1,"StudyBridge's business profile does not specify a refund policy for canceled lessons. I have recorded your question so our team can follow up with you. Exact refund details, discounts, and guarantees are not currently specified in our information.",,,,,,,
+Course Specialist / baseline,explicit_feedback,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,system,66.208,3.106,True,1,False,2,0,"[""record_feedback""]",1,Thank you for sharing your feedback. I have logged your comment regarding the enrollment process.,,,,,,,
+Course Specialist / baseline,memory,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,system,66.745,7.066,True,1,False,2,0,"[""record_customer_interest""]",1,"Thanks, Alex. I recorded your interest in Python tutoring for follow-up. This does not confirm a lesson booking.",,,,,,,
+Course Specialist / zero_shot,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,False,False,system,79.013,2.776,True,0,False,2,0,"[""lookup_courses""]",1,"For someone new to programming, StudyBridge offers **Python Starter**. 
+
+Here are the details for the course:
+- **Topics covered:** Variables, loops, functions, and beginner exercises.
+- **Instructed by:** Omar Saleh, software engineer and co-founder.
+
+StudyBridge offers flexible lesson formats:
+- **Individual lessons:** USD 20 per 60-minute session (or a package of four individual lessons for USD 72).
+- **Small-group lessons:** USD 10 per student per 60-minute session (maximum of four students).
+- **Introductory consultation:** A free 15-minute consultation is also available to help you get started and choose the right direction. 
+
+Sessions take place online in English or Arabic. Please note that recording interest or scheduling a consultation does not guarantee a specific time slot or complete a booking; our team will follow up to confirm details. 
+
+Would you like to schedule a free 15-minute introductory consultation or sign up for Python Starter?",,,,,,,
+Course Specialist / zero_shot,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,False,False,system,38.038,1.141,True,0,False,1,0,[],1,"Hello Alex! I would be glad to help you get started with Python tutoring (our Python Starter course, which covers variables, loops, functions, and beginner exercises). 
+
+Could you please share your email address so I can record your interest and have someone follow up with you? 
+
+Please note that recording your interest is not a confirmed booking or payment.",,,,,,,
+Course Specialist / zero_shot,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,False,False,system,77.975,8.454,True,0,False,2,0,"[""record_feedback""]",1,"I have recorded your question about our refund policy. StudyBridge's published business profile does not specify refund policies or cancellation terms, so I have noted this for our team to confirm. Let me know if you would like information on our courses, pricing, or office hours.",,,,,,,
+Course Specialist / in_message,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,message,117.547,4.114,True,1,False,3,0,"[""lookup_courses"", ""lookup_courses""]",1,"For a beginner in programming, StudyBridge offers **Python Starter**. 
+
+Here are the details for this course:
+- **Scope:** Variables, loops, functions, and beginner exercises.
+- **Format options:** 
+  - Individual 60-minute lessons (USD 20 each, or a 4-lesson package for USD 72)
+  - Small-group 60-minute sessions (USD 10 per student, up to four students)
+- **Languages:** English or Arabic.
+- **Consultation:** A free 15-minute introductory consultation is available to help you choose a subject.",,,,,,,
+Course Specialist / in_message,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,message,38.109,0.994,True,1,False,1,0,[],1,"I need your email address to record your interest in Python tutoring for follow-up. Please provide your email, and I will submit your request. Note that recording your interest does not confirm or book a lesson.",,,,,,,
+Course Specialist / in_message,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,message,77.901,1.754,True,1,False,2,0,"[""record_feedback""]",1,StudyBridge's published business profile does not specify a refund or cancellation policy. I have logged your question for the team so they can follow up with you.,,,,,,,
+Course Specialist / instructions_ablation,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,False,False,system,78.895,2.714,False,0,False,2,0,"[""lookup_courses""]",1,"For beginners in programming, StudyBridge offers **Python Starter**. 
+
+Here are the details for this course:
+* **Scope:** Covers variables, loops, functions, and beginner exercises.
+* **Format:** Available as individual lessons (60 minutes for USD 20, or a 4-lesson package for USD 72) or small-group lessons (USD 10 per student per session, up to four students).
+* **Language:** Sessions are conducted online in English or Arabic.
+
+If you would like to schedule a free 15-minute introductory consultation to discuss your goals, or if you have any questions, please let me know!",,,,,,,
+Course Specialist / instructions_ablation,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,False,False,system,77.686,1.94,False,0,False,2,0,"[""lookup_courses""]",1,"Hello Alex. To complete your enrollment inquiry and arrange a follow-up, could you please provide your email address?",,,,,,,
+Course Specialist / instructions_ablation,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,False,False,system,78.124,1.946,False,0,False,2,0,"[""record_feedback""]",1,"I have noted your question regarding our refund policy. Exact details on refunds and cancellations are not specified in our business profile, so I have logged your question for our team. Someone from StudyBridge will need to confirm our policy and follow up with you.",,,,,,,
+Course Specialist / two_example_few_shot,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,system,77.187,2.103,True,2,False,2,0,"[""lookup_courses""]",1,"For a beginner in programming, StudyBridge offers **Python Starter**. 
+
+Here are the details for this course:
+- **Scope:** Variables, loops, functions, and beginner exercises.
+- **Language:** English or Arabic (online).
+- **Pricing:** 
+  - Individual lessons: USD 20 per 60-minute session.
+  - 4-lesson package: USD 72.
+  - Small-group lessons: USD 10 per student per 60-minute session (up to four students).
+  - A free 15-minute introductory consultation is also available to help you get started.
+
+Let me know if you would like to request follow-up or have any other questions!",,,,,,,
+Course Specialist / two_example_few_shot,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,system,38.643,0.692,True,2,False,1,0,[],1,Could you please provide your email address so I can record your interest in Python tutoring for follow-up?,,,,,,,
+Course Specialist / two_example_few_shot,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,False,system,77.706,1.659,True,2,False,2,0,"[""record_feedback""]",1,The profile does not specify a refund policy. I logged your question so the team can confirm it. I cannot promise that a refund is available.,,,,,,,
+Course Specialist / stepwise_reasoning,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,True,system,77.65,6.545,True,1,True,2,0,"[""lookup_courses""]",1,"For a beginner in programming, StudyBridge offers **Python Starter**. 
+
+* **Scope:** Covers variables, loops, functions, and beginner exercises.
+* **Format:** Available as individual 60-minute lessons (USD 20 each, or USD 72 for a package of four) or small-group lessons (USD 10 per student per session, up to four students).
+* **Language:** Sessions take place online in English or Arabic.
+
+Let me know if you would like to request follow-up or have any other questions!",,,,,,,
+Course Specialist / stepwise_reasoning,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,True,system,78.237,1.9,True,1,True,2,0,"[""lookup_courses""]",1,"Thanks, Alex. I see you are interested in Python tutoring (Python Starter course). To help us follow up with you, could you please provide your email address? 
+
+Please note that recording your interest does not confirm a lesson booking or process payment.",,,,,,,
+Course Specialist / stepwise_reasoning,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.2,0.8,20,2048,True,True,system,77.982,1.622,True,1,True,2,0,"[""record_feedback""]",1,StudyBridge's business profile does not specify refund policies or cancellation terms. I have recorded your question so our team can follow up with you.,,,,,,,
+Course Specialist / temperature_only_0.7,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.8,20,2048,True,False,system,78.327,1.735,True,1,False,2,0,"[""lookup_courses""]",1,"For a beginner in programming, StudyBridge offers **Python Starter**. 
+
+* **Scope:** Covers variables, loops, functions, and beginner exercises.
+* **Delivery:** Online sessions in English or Arabic.
+* **Pricing:** Individual lessons are USD 20 for 60 minutes, a package of four individual lessons is USD 72, or small-group lessons are USD 10 per student per session (up to four students).
+* **Consultation:** A free 15-minute introductory consultation is available to help you get started (note that this is a consultation, not a full lesson).
+
+Let me know if you would like to request follow-up or have any other questions about our courses.",,,,,,,
+Course Specialist / temperature_only_0.7,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.8,20,2048,True,False,system,78.034,2.045,True,1,False,2,0,"[""lookup_courses""]",1,"Thanks, Alex. You mentioned your name and interest in Python tutoring, but I still need your email address to record your request for follow-up. Could you please share your email?",,,,,,,
+Course Specialist / temperature_only_0.7,unknown_policy,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.8,20,2048,True,False,system,52.007,1.527,True,1,False,2,0,"[""record_feedback""]",1,StudyBridge's business profile does not specify a refund policy or cancellation terms. I have recorded your question so our team can follow up with you.,,,,,,,

@@ -1,0 +1,13 @@
+{
+  "python": "3.13.16",
+  "packages": {
+    "google-genai": "1.75.0",
+    "langgraph": "1.2.15",
+    "gradio": "6.30.0",
+    "pypdf": "6.20.1",
+    "python-dotenv": "1.2.4"
+  },
+  "model": "gemini-3.5-flash-lite",
+  "minimum_request_interval_seconds": "13",
+  "core_sha256": "507c32c1584c35387b924e3c09335fd65d3e27766f5729b65a847c5978a6227b"
+}

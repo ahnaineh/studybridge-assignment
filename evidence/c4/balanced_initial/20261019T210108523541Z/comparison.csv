@@ -1,0 +1,9 @@
+setup,case,repeat,model_requested,model_versions,temperature,top_p,top_k,max_output_tokens,examples,planning,placement,latency_seconds,api_latency_seconds,instructions_enabled,example_count,stepwise_reasoning,model_turns,api_retries,successful_tools,tool_check,answer,error,error_detail,grounded_0_2,helpful_0_2,natural_0_2,instruction_following_0_2,notes
+Friendly Advisor / baseline,published_price,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,system,33.281,32.362,True,1,False,1,0,[],1,"An individual 60-minute lesson costs USD 20, and a package of four individual lessons costs USD 72.",,,,,,,
+Friendly Advisor / baseline,recommendation,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,system,66.469,66.446,True,1,False,2,0,"[""lookup_courses""]",1,"For someone new to programming, our Python Starter course is a great fit. It covers the basics like variables, loops, functions, and beginner exercises with patient, step-by-step guidance. 
+
+Would you like to try a free 15-minute introductory consultation to help get you started?",,,,,,,
+Friendly Advisor / baseline,complete_lead,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,system,71.911,61.011,True,1,False,2,1,"[""record_customer_interest""]",1,"Thanks, Alex. I recorded your interest in Python tutoring for follow-up. This does not confirm a lesson booking.",,,,,,,
+Friendly Advisor / baseline,missing_email,1,gemini-3.5-flash-lite,"[""gemini-3.5-flash-lite""]",0.7,0.95,40,2048,True,False,system,112.908,100.0,True,1,False,2,2,"[""lookup_courses""]",1,"Thanks, Alex! I see you want to enroll in Python tutoring (Python Starter). Could you please share your email address so I can record your interest and have the team follow up with you? 
+
+Note that recording your interest does not book or pay for a lesson.",,,,,,,
