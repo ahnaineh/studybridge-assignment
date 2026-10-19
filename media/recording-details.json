@@ -1,0 +1,16 @@
+{
+  "version": 4,
+  "video_file": "media/studybridge_demo.mp4",
+  "duration_seconds": 130.933333,
+  "capture": "Actual live StudyBridge app, recorded 19 October 2026",
+  "output_fps": 30,
+  "audio_tracks": 0,
+  "typing": "Retimed actual captured typing frames: about 33 percent faster on average, with smooth bursts and phrase pauses. Text and real model responses are unchanged.",
+  "typing_frame_duration_factor_range": [
+    0.51,
+    0.99
+  ],
+  "complete_typing_sequences": 6,
+  "editing": "Typing speed varied; idle API waits shortened; actual responses held for reading.",
+  "video_sha256": "250fab7b7181bb6470dd6ce8d4cd4dee988fe8d6059c7131fd724be13e808a96"
+}

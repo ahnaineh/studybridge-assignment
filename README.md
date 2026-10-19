@@ -20,9 +20,15 @@ actual result logs, and five completed reflection answers.
 - `evidence/`: real Colab outputs, original experiment files and reviewed scores.
 - `reflection.md`, `VALIDATION.md`, `demo_script.md`: reflection, verification and video guide.
 
-The remaining submission deliverable is your video recording and its link. Optional
-Hugging Face hosting and C3 draft/revision reflection are not required and are not
-claimed as completed.
+[![StudyBridge functionality demonstration](media/demo-preview.jpg)](media/studybridge_demo.mp4)
+
+[Watch/download the silent demo video](media/studybridge_demo.mp4) ·
+[Submission guide](SUBMISSION.md) · [Moodle link file](submission_link.txt)
+
+The video shows actual C3 price, lead, memory, unknown-policy and feedback flows,
+then a C4 course recommendation. Typing speed varies and idle API waits are shortened.
+Optional Hugging Face hosting and C3 draft/revision reflection bonus evidence are
+not claimed as completed.
 
 ## Run in Colab
 
@@ -109,9 +115,10 @@ are ignored to avoid accidental publication of real contacts.
 
 ## Submission
 
-Submit this repository for the code, notebooks, business profile, comparison and
-reflection. Record the walkthrough in `demo_script.md` and provide the video link
-in the course platform. Both notebooks include the required implementation directly.
+Submit `submission_link.txt` separately through the C3 and C4 Moodle assignment
+pages. It links to this repository, each notebook, the included video, and the C4
+report/reflection. See [SUBMISSION.md](SUBMISSION.md) for the handoff. Both notebooks
+include the required implementation directly.
 The business summary filename follows the C3 checklist's `business_summary.txt`.
 
 ## References

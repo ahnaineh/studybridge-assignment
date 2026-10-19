@@ -1,0 +1,20 @@
+StudyBridge — Agentic Systems C3 and C4
+
+GitHub repository:
+https://github.com/ahnaineh/studybridge-assignment
+
+C3 — Introduction to Agents:
+https://github.com/ahnaineh/studybridge-assignment/blob/main/business_agent.ipynb
+
+C4 — Agent Personas and Thinking Mechanisms:
+https://github.com/ahnaineh/studybridge-assignment/blob/main/react_agent.ipynb
+
+Functionality demonstration video (silent):
+https://github.com/ahnaineh/studybridge-assignment/blob/main/media/studybridge_demo.mp4
+
+C4 comparison report and reflections:
+https://github.com/ahnaineh/studybridge-assignment/blob/main/evidence/c4/EXPERIMENT_REPORT.md
+https://github.com/ahnaineh/studybridge-assignment/blob/main/reflection.md
+
+Run instructions and private API-key setup are in README.md.
+Both assignments are included in this shared repository.
