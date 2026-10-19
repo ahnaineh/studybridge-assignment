@@ -384,8 +384,15 @@ def c3_reply(message, history=None, persona='Friendly Advisor', *, client=None, 
                      'Check the draft against the instructions and sources. Return only the '
                      'revised customer-facing answer. Do not claim unexecuted actions. '
                      'If an action was missed, say so without pretending it happened.',
-            config=types.GenerateContentConfig(system_instruction=state['system_prompt'],
-                                                temperature=0.1, max_output_tokens=2048))
+            config=types.GenerateContentConfig(
+                system_instruction=state['system_prompt'] + '\n\nREFLECTION REVIEW MODE\n'
+                    'For this review only, tools are unavailable and the earlier tool-routing '
+                    'instructions do not apply. Return only the revised plain-text answer to '
+                    'the student, never tool-call JSON or code. Correct unsupported facts and '
+                    'arithmetic using the sources. If the draft missed a required action, '
+                    'explain that it has not been recorded; do not simulate a tool or claim '
+                    'that the action happened. Respect the student\'s stated preferences.',
+                temperature=0.1, max_output_tokens=2048))
         revised = review.text or draft
         write_log('reflection.jsonl', {'draft': draft, 'revised_reply': revised})
         state['answer'] = revised

@@ -27,8 +27,9 @@ actual result logs, and five completed reflection answers.
 
 The video shows actual C3 price, lead, memory, unknown-policy and feedback flows,
 then a C4 course recommendation. Typing speed varies and idle API waits are shortened.
-Optional Hugging Face hosting and C3 draft/revision reflection bonus evidence are
-not claimed as completed.
+The optional C3 reflection pass is demonstrated with logged draft/revised replies;
+see [the reflection report](evidence/c3-reflection/REPORT.md). Hugging Face hosting
+is optional and is not claimed as completed.
 
 ## Run in Colab
 

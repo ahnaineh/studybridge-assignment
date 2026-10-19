@@ -43,5 +43,6 @@ submission status are determined by the course platform.
 
 A grader supplies a private Gemini key through Colab Secrets, the hidden prompt or
 a local `.env`. Keys are deliberately absent from GitHub. All published contacts
-are synthetic `example.com` details. Hugging Face hosting and C3 reflection-pass
-bonus evidence are optional and are not claimed as completed bonuses.
+are synthetic `example.com` details. The optional C3 reflection bonus is included
+with logged original/revised evidence in [the report](evidence/c3-reflection/REPORT.md).
+Optional Hugging Face hosting is not claimed.

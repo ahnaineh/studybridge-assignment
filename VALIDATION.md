@@ -1,9 +1,11 @@
 # Validation record
 
 Final submission checks were completed on 20 October 2026 (Beirut time; 19 October
-UTC). The final guarded agent core has SHA-256
+UTC). The core used for the completed C4 study has SHA-256
 `507c32c1584c35387b924e3c09335fd65d3e27766f5729b65a847c5978a6227b`.
-Each final-study source snapshot uses that same core.
+Each final-study source snapshot uses that same core. A later C3-only reflection
+reviewer-prompt fix is documented in `evidence/c3-reflection/REPORT.md`; the C4
+execution path and the historical comparison evidence are unchanged.
 
 ## Live C4 behavior and comparisons
 
@@ -52,7 +54,11 @@ Live demonstration, full experiment rerun and Gradio launch flags were off durin
 this notebook check. It verifies setup, definitions, source loading, result display
 and saved traces; it is separate from the real model study above. The setup now
 keeps an already-open project instead of switching into an older extracted ZIP.
-The final execution record is `evidence/final-notebook-validation.json`.
+The original execution record is `evidence/final-notebook-validation.json`.
+Both notebooks and the same 11 tests were rerun after the C3 reflection update;
+see `evidence/c3-reflection/notebook-validation.json` and
+`evidence/c3-reflection/offline-tests.txt` for the current checks.
+The C3 notebook now executes a display of the two saved reflection examples.
 
 Every Python file and notebook code cell passes a syntax check. The published
 aggregates are reproducible with `python summarize_results.py` from the original
@@ -92,5 +98,6 @@ history do not provide a production database or global deduplication. A tool wri
 can precede a provider failure, so a new user request can create a duplicate record.
 Provider availability and some unsupported callback wording remain observed limits.
 One repetition per condition does not establish a general winning prompt.
-Optional C3 live reflection-bonus evidence and Hugging Face Spaces hosting are not
-claimed as completed bonuses.
+The optional C3 reflection pass now has live original/revised evidence and a
+controlled correction test; see `evidence/c3-reflection/REPORT.md`. Optional Hugging
+Face Spaces hosting is not claimed.

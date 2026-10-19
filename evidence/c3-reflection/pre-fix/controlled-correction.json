@@ -1,0 +1,26 @@
+{
+  "completed_utc": "2026-10-19T22:04:27.054245+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "core_sha256": "507c32c1584c35387b924e3c09335fd65d3e27766f5729b65a847c5978a6227b",
+  "test_type": "Controlled flawed draft; first generation is seeded, reflection is a real Gemini call through the unchanged c3_reply reflection path. Not a naturally observed model failure.",
+  "question": "What do four individual lessons cost compared with the four-lesson package, how much do I save, and what is your refund policy?",
+  "timestamp": "2026-10-19T22:04:27.053528+00:00",
+  "draft": "Four individual lessons cost USD 100. The four-lesson package costs USD 72, saving USD 28. All purchases include a guaranteed full refund.",
+  "revised_reply": "```json\n{\"name\": \"record_feedback\", \"parameters\": {\"question\": \"What do four individual lessons cost compared with the four-lesson package, how much do I save, and what is your refund policy?\"}}\n```",
+  "trace": [
+    {
+      "event": "route",
+      "intent": "feedback"
+    },
+    {
+      "event": "model",
+      "turn": 1,
+      "tool_names": [],
+      "model_version": "controlled-seeded-draft-not-a-model-generation",
+      "api_latency_seconds": 0.0,
+      "api_attempts": 1,
+      "public_text": "Four individual lessons cost USD 100. The four-lesson package costs USD 72, saving USD 28. All purchases include a guaranteed full refund."
+    }
+  ],
+  "reflection_enabled": true
+}

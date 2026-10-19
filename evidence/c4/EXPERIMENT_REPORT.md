@@ -17,8 +17,10 @@ is retained and scored as a model error rather than rewritten as a pass.
 
 ## Procedure and controls
 
-The agent core is the final guarded implementation, SHA-256
+The agent core used for this study is the guarded implementation, SHA-256
 `507c32c1584c35387b924e3c09335fd65d3e27766f5729b65a847c5978a6227b`.
+A later change only to the optional C3 reflection-review prompt is documented in
+[the C3 reflection report](../c3-reflection/REPORT.md); the C4 execution path is unchanged.
 The requested and reported model is `gemini-3.5-flash-lite`. Both personas allow
 2048 output tokens. Friendly Advisor uses temperature 0.7, top-p 0.95 and top-k 40;
 Course Specialist uses 0.2, 0.8 and 20. Package versions and Python version are

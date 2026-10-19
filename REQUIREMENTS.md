@@ -24,9 +24,9 @@ The summary filename follows the project structure and final checklist in the
 brief (`business_summary.txt`). The other paragraph calls it `summary.txt`.
 The permitted Gemini API is implemented with the Google Gen AI SDK.
 
-Optional bonuses are separate: the reflection pass is implemented but its live
-original/revised evidence is not claimed as completed; Hugging Face Spaces hosting
-is not claimed.
+The optional reflection bonus is implemented and demonstrated: see
+[evidence/c3-reflection/REPORT.md](evidence/c3-reflection/REPORT.md), its original/revised
+JSON logs, and the C3 notebook. Hugging Face Spaces hosting is not claimed.
 
 ## C4 — Agent Personas and Thinking Mechanisms
 
